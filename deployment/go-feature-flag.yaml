@@ -78,7 +78,7 @@ data:
     hex-color:
       true: c05543
       false: 2f5230
-      default: 2f5230
+      default: c05543
       percentage: 100
 
     # Must be a valid algorithm name
