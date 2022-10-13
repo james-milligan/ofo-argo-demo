@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: open-feature-demo-deployment
+  name: open-feature-demo-playground-app
   labels:
     app: open-feature-demo
 spec:
@@ -19,8 +19,19 @@ spec:
     spec:
       containers:
         - name: open-feature-demo
-          image: ghcr.io/open-feature/open-feature-demo:latest
+          image: jamesmilligan/openfeature-playground-app
           args:
             - flagd
           ports:
             - containerPort: 30000
+          env:
+          - name: FLAGD_HOST
+            value: flagd
+          - name: OTEL_EXPORTER_JAEGER_AGENT_HOST
+            value: jaeger
+          - name: OTEL_EXPORTER_JAEGER_AGENT_PORT
+            value: '6832'
+          - name: GO_FEATURE_FLAG_URL
+            value: http://go-feature-flag:1031
+          - name: FIB_SERVICE_URL
+            value: http://open-feature-demo-fibonacci-service:30001
