@@ -33,3 +33,18 @@ spec:
             value: http://go-feature-flag:1031
           - name: FIB_SERVICE_URL
             value: http://open-feature-demo-fibonacci-service:30001
+---
+# Service exposed using NodePort
+apiVersion: v1
+kind: Service
+metadata:
+  name: open-feature-demo-service
+spec:
+  type: NodePort
+  selector:
+    app: open-feature-demo
+  ports:
+    # By default and for convenience, the `targetPort` is set to the same value as the `port` field.
+    - port: 30000
+      targetPort: 30000
+      nodePort: 30000
