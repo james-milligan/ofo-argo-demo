@@ -13,7 +13,7 @@ spec:
         app: open-feature-demo-goff
     spec:
       containers:
-        - name: open-feature-demo-go-ff
+        - name: open-feature-demo-goff
           image: thomaspoignant/go-feature-flag-relay-proxy:v0.3.0
           ports:
             - containerPort: 1031
@@ -30,7 +30,7 @@ kind: Service
 metadata:
   name: open-feature-demo-goff-service
 spec:
-  type: NodePort
+  type: ClusterIP
   selector:
     app: open-feature-demo-goff
   ports:
