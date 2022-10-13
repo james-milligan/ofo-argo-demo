@@ -21,7 +21,7 @@ spec:
           ports:
             - containerPort: 1031
           volumeMounts:
-          - name: goff-proxy-volume
+          - name: goff-config-volume
             mountPath: /goff/
       volumes:
         - name: goff-config-volume
