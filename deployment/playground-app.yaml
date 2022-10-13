@@ -30,7 +30,7 @@ spec:
           - name: OTEL_EXPORTER_JAEGER_AGENT_PORT
             value: '6832'
           - name: GO_FEATURE_FLAG_URL
-            value: http://open-feature-demo-goff:1031
+            value: http://open-feature-demo-goff-service:1031
           - name: FIB_SERVICE_URL
             value: http://open-feature-demo-fibonacci-service:30001
 ---
