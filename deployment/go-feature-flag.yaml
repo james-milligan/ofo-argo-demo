@@ -17,13 +17,13 @@ spec:
           image: thomaspoignant/go-feature-flag-relay-proxy:v0.3.0
           ports:
             - containerPort: 1031
-          # volumeMounts:
-          # - name: goff-config-volume
-          #   mountPath: /goff/
-      # volumes:
-      #   - name: goff-config-volume
-      #     configMap:
-      #       name: goff-config
+          volumeMounts:
+          - name: goff-config-volume
+            mountPath: /goff/
+      volumes:
+        - name: goff-config-volume
+          configMap:
+            name: goff-config
 ---
 apiVersion: v1
 kind: ConfigMap
