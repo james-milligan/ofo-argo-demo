@@ -11,9 +11,6 @@ spec:
     metadata:
       labels:
         app: open-feature-demo-goff
-      annotations:
-        openfeature.dev: "enabled"
-        openfeature.dev/featureflagconfiguration: "end-to-end"
     spec:
       containers:
         - name: open-feature-demo-go-ff
