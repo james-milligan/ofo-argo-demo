@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: open-feature-demo-deployment
+  labels:
+    app: open-feature-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: open-feature-demo
+  template:
+    metadata:
+      labels:
+        app: open-feature-demo
+      annotations:
+        openfeature.dev: "enabled"
+        openfeature.dev/featureflagconfiguration: "end-to-end"
+    spec:
+      containers:
+        - name: open-feature-demo
+          image: ghcr.io/open-feature/open-feature-demo:latest
+          args:
+            - flagd
+          ports:
+            - containerPort: 30000
