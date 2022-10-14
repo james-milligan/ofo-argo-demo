@@ -30,5 +30,7 @@ spec:
   ports:
     - port: 6832
       targetPort: 6832
+      name: internal
     - port: 16686
       targetPort: 16686
+      name: external
