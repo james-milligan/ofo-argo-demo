@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: open-feature-demo-jaeger
-          image: thomaspoignant/go-feature-flag-relay-proxy:v0.3.0
+          image: jaegertracing/all-in-one:1.38
           ports:
             - containerPort: 6832
             - containerPort: 16686
