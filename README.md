@@ -19,7 +19,7 @@ authenticate argocd cli
 kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d; echo
 argocd login localhost:8080
 ```
-deploy the openfeature app
+deploy the openfeature app to argocd
 ```
 argocd app create openfeature --repo https://github.com/james-milligan/ofo-argo-demo.git --path deployment --dest-server https://kubernetes.default.svc --dest-namespace default
 ```
