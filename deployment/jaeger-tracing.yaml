@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: open-feature-demo-go-feature-flag-proxy
+  name: open-feature-demo-jaeger-agent
 spec:
   replicas: 1
   selector:
