@@ -54,4 +54,4 @@ data:
     OTEL_EXPORTER_JAEGER_AGENT_HOST: open-feature-demo-jaeger-service
     OTEL_EXPORTER_JAEGER_AGENT_PORT: '6832'
     GO_FEATURE_FLAG_URL: http://open-feature-demo-goff-service:1031
-    FIB_SERVICE_URL: http://open-feature-demo-fibonacci-service:30001
+    FIB_SERVICE_URL: http://open-feature-fibonacci-service:30001

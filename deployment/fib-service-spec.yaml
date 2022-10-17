@@ -33,7 +33,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: open-feature-fib-service-service
+  name: open-feature-fibonacci-service
 spec:
   type: NodePort
   selector:
