@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: open-feature-demo
-          image: jamesmilligan/openfeature-playground-app
+          image: ghcr.io/open-feature/playground-app:v0.1.1
           args:
             - flagd
           ports:
