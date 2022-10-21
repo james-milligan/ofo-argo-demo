@@ -1,9 +1,9 @@
 # Openfeature demo app deployment ft. argo
 
-install the openfeature operator
+install cert manager
 ```
-git clone https://github.com/open-feature/open-feature-operator
-cd open-feature-operator && IMG=ghcr.io/open-feature/open-feature-operator:main make deploy-operator
+kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.9.1/cert-manager.yaml
+kubectl wait --for=condition=Available=True deploy --all -n 'cert-manager'
 ```
 
 deploy argocd to cluster
@@ -19,6 +19,14 @@ authenticate argocd cli
 kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d; echo
 argocd login localhost:8080
 ```
+
+deploy the openfeature-operator application
+```
+argocd app create openfeature-operator --repo https://github.com/open-feature/open-feature-operator.git --path releases/download/v0.2.2 --dest-server https://kubernetes.default.svc --dest-namespace open-feature-operator-system
+
+```
+
+
 deploy the openfeature app to argocd
 ```
 argocd app create openfeature --repo https://github.com/james-milligan/ofo-argo-demo.git --path deployment --dest-server https://kubernetes.default.svc --dest-namespace default
